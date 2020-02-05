@@ -23,7 +23,7 @@ This a step-by-step tutorial of how to set up an AWS Cognito User Pool with an A
 In case SSO authentication with Azure AD account to AWS Cognito, Azure AD will be an identity provider (IdP) and AWS Cognito a Service provider (SP). AWS Cognito before giving to the user an access to AWS resources checks with the identity provider if the user's permissions. Azure AD verifies user identity (emails and password, for example) and if valid asserts back to AWS Cognito that user should have access along with the user's identity.
 
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image10.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image10.png)
 
  
 The SSO flow based on the next steps:
@@ -55,35 +55,35 @@ The SSO flow based on the next steps:
 
 1.2 Choose “Cognito” in section Security, Identity & Compliance:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image28.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image28.png)
 
 1.3 In Cognito service choose “Manage User Pools”:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image1.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image1.png)
 
 1.4 Choose “Create a user pool”:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image4.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image4.png)
 
 1.5 Type a name of your user pool and choose “Review Defaults” in case you don’t have specific settings you want to set:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image12.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image12.png)
 
 1.6 Choose section with required attributes and click on edit:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image22.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image22.png)
 
 1.7 Setup user sign-in option by choosing “email address or phone number”. In subcategories choose “allow email addresses” and choose “Next step”:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image27.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image27.png)
 
 1.8 Leave all settings default (if you don’t want to set some). At the last screen choose “Create Pool”:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image15.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image15.png)
 
 1.9 Now your pool is created. Memorize Pool Id (e.g. us-east-1_XX123xxXXX). You will need this id in Azure AD portal and mobile app settings.
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image6.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image6.png)
 
 1.10 Set User Pool Domain Name. For this open your User Pool, choose section “App Integration” -> “Domain Name”. Type your domain prefix.
 
@@ -92,7 +92,7 @@ Amazon Cognito Domain is built by this scheme:
 https://<Domain prefix>.auth.<Region>.amazoncognito.com
 ```
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image21.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image21.png)
 
 Memorize it, it will be required in Azure and mobile app settings.
 
@@ -108,15 +108,15 @@ Basically, you can create your application with Mobile Hub and associate it with
 
 2.1 Open your User Pool, choose “General settings” -> “App Clients” and click on “Add new app client”:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image11.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image11.png)
 
 2.2 Type a name of your app client, e.g. “iOS App Client”, make sure that “Generate client secret” is checked, leave other setting default. Press “Create app client”.
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image19.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image19.png)
 
 2.3 Now your app client is created, open “General” -> “App Clients”. Your application will be listed there. Memorize “App client id” and “App client secret”:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image25.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image25.png)
 
 2.4 Setup App Client. Open “App integration” -> “App Client Settings”. Choose your mobile client app and set next settings:
 
@@ -130,7 +130,7 @@ Callback URL(s) and Sign Out URL(s) should be set to your app URL Scheme (you ca
 
 Save your changes.
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image23.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image23.png)
 
 **At the end of this section you should have the next information:**
 - App client id;
@@ -145,25 +145,25 @@ This is not all set-up which you need to perform in AWS, but for now, you need t
 
 3.1 Open Azure Portal [https://portal.azure.com/](https://portal.azure.com/), on the right side menu choose “Azure Active Directory”.
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image18.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image18.png)
 
 If there is no such service, Open “All services” and type “Azure Active Directory”:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image5.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image5.png)
 
 3.2 In Active Directory menu choose “Enterprise applications”:  
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image20.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image20.png)
 
 3.3 In opened section choose “New Application”:  
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image30.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image30.png)
 
   
 
 3.4 Pick “Non-gallery application” type for your application:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image16.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image16.png)
 
   
 
@@ -171,11 +171,11 @@ If there is no such service, Open “All services” and type “Azure Active Di
 
   
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image31.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image31.png)
 
 3.6 Setup Single sign-on. In your Azure AD enterprise application choose section “Single sign-on”, in dropdown list choose “SAML-based Sign-on”:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image9.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image9.png)
 
 In section “Domain and URLs” set next information:
 
@@ -195,19 +195,19 @@ Identifier: urn:amazon:cognito:sp:us-east-1_XX123xxXXX
 
 Reply URL: ```https://example-setup-app.auth.us-east-1.amazoncognito.com/saml2/idpresponse```
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image8.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image8.png)
 
 Save your changes and download SAML File:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image17.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image17.png)
 
 3.7 Add a User to your app. In your Azure AD select “Enterprise applications” and choose your application. Select “Users and groups”->“Add user”.
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image14.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image14.png)
 
 Invite new users or select from existing. These users will be able to login with this Azure AD account to your application. When you’ll finish adding a user select “Assign”.
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image24.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image24.png)
 
 **This is all settings in the Azure portal. At the end of this section you should have:**
 -   SAML file with XML format;
@@ -217,13 +217,13 @@ Invite new users or select from existing. These users will be able to login with
 
 5.1 Open your User Pool and choose section “Federation” -> “Identity Providers”. In opened section select “SAML” provider:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image3.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image3.png)
 
 5.2 Type a name for your provider and upload SAML file from Azure. Press “Create Provider”:
 
   
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image32.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image32.png)
 
 5.3 Setup attribute mapping from your provider to AWS. In this example we are only interested in email, so for email add next:
 
@@ -235,12 +235,12 @@ Invite new users or select from existing. These users will be able to login with
 Save your changes.
 
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image26.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image26.png)
 
 
 5.4 Assign Identity provider to your app client. In your user pool open section “App Client Settings”. Choose your application, in the section “Enabled Identity Providers” choose a provider which you just created for this user pool. Save your changes.
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image13.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image13.png)
 
 That’s all settings which you should do in AWS console and Azure portal. You can now test your set-up.
 
@@ -249,15 +249,15 @@ That’s all settings which you should do in AWS console and Azure portal. You c
 You can easily test your setup in Azure Portal:
 1.  Open Single sign-on section of your application in the Azure portal and choose button “Test SAML Settings”:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image7.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image7.png)
 
 2. Then you will need to install My Apps Secure Sign-in Extension and the perform a sign in with the account which you have added to this application on step 3.7:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image2.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image2.png)
 
 3. You will be able to see SAML request and response, and token if the login succeeds:
 
-![](https://github.com/SezorusArticles/Article_KZ001/blob/master/Images/image29.png)
+![](https://github.com/2ZGroupSolutionsArticles/Article_KZ001/blob/master/Images/image29.png)
 
 At this point, you should have all required values to begin setup SSO authentication with Azure AD account in your mobile application.
 
@@ -288,6 +288,6 @@ Author:
 
 Kseniia Zozulia
 
-Email: kseniiazozulia@sezorus.com
+Email: kseniiazozulia@2zgroup.net
 
 LinkedIn: [Kseniia Zozulia](https://www.linkedin.com/in/629bb187)
